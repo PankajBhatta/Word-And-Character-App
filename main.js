@@ -4,11 +4,12 @@ const wordCount = document.querySelector(".word-counter-container .word-count sp
 
  const countWords = () => {
     let words = wordsTextarea.value;
-    let splitWords = words.split(" ");
+    let splitWords = words.split(/\s+/).filter(word => word !== ""); 
 
     let numberOfWords = splitWords.length;
 
     wordCount.innerHTML = numberOfWords;
- };
+
+};
 
 CountBtn.addEventListener("click",countWords);
